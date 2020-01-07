@@ -1,10 +1,6 @@
-# onthedeer android端设计文档
-## 模块关系图
-![模块](img/android模块关系.jpg)
-----
 
-## 模块接口文档
-### 模块一:LoginAcativity:登陆
+#### android学生界面
+#### 模块一:LoginAcativity:登陆
 <br>
 
 函数名|参数|函数功能
@@ -19,7 +15,7 @@ validate|void|检查输入的用户名和密码是否合格（是否为空，长
 onresume|void|重写resume函数，每次回退到该界面检查权限是否被允许
 <br>
 
-### 模块二:MainActivity:课程列表界面   
+#### 模块二:MainActivity:课程列表界面   
 函数名|参数|函数功能    
 --|--|--
 onCreate|Bundle savedInstanceState|初始化该用户课程列表，将获取到的课程信息通过recyclerview的adapter展示到界面
@@ -27,18 +23,18 @@ http_getcourse|void|调用服务器接口获取该用户课程列表
 initData|void|初始化list，异步调用http_getcourse,并用handler机制通告主线程获取课程列表完成
 
 
-### 模块三:CourseAdapter:MainActivity的适配器  
+#### 模块三:CourseAdapter:MainActivity的适配器  
 函数名|参数|函数功能    
 --|--|--
 CourseAdapter|List<String> list1,List<String> list2,List<String> list3|根据参数初始化课程名字，课程老师，课程介绍
 getItemCount|void|返回recyclerview的规模
 onCreateViewHolder|ViewGroup parent, int viewType|返回一个新的viewHolder对象
 onBindViewHolder|CourseAdapter.ViewHolder holder, int position|将对应position的课程信息绑定到viewholder，并且对每一个item进行点击监听
-#### 内部类：ViewHolder,作为recyclerview的总的界面框架
+##### 内部类：ViewHolder,作为recyclerview的总的界面框架
 
 
 
-### 模块四:CheckinActivity:用户签到以及签到记录界面 
+#### 模块四:CheckinActivity:用户签到以及签到记录界面 
 函数名|参数|函数功能    
 --|--|--
 onCreate|Bundle savedInstanceState|初始化界面元素以及成员变量
@@ -55,16 +51,16 @@ onRequestPermissionsResult|int requestCode,String[] permissions,int[] grantResul
 onPermissionGranted|String permission|获取GPS权限
 checkGPSIsOpen|void|检查GPS权限是否打开
 
-### 模块五:RecordAdapter:作为checkinActivity的适配器，类似上面的CourseAdapter
+#### 模块五:RecordAdapter:作为checkinActivity的适配器，类似上面的CourseAdapter
 函数名|参数|函数功能    
 --|--|--
 RecordAdapter|List<String> list1,List<String> list2,List<String> list3|根据参数初始化签到时间，签到记录，课程信息
 getItemCount|void|返回recyclerview的规模
 onCreateViewHolder|ViewGroup parent, int viewType|返回一个新的viewHolder对象
 onBindViewHolder|CourseAdapter.ViewHolder holder, int position|将对应position的课程信息绑定到viewholder，并且对每一个item进行点击监听
-#### 内部类：ViewHolder,作为recyclerview的总的界面框架
+##### 内部类：ViewHolder,作为recyclerview的总的界面框架
 
-### 模块六:Audio_Record:录音
+#### 模块六:Audio_Record:录音
 函数名|参数|函数功能    
 --|--|--
 onCreate|Bundle savedInstanceState|调用init函数初始化界面以及参数
