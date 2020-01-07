@@ -2,7 +2,7 @@
 
 web端采用vue框架开发，整体的组件组成如下图
 
-<img src="C:\Users\15039\AppData\Roaming\Typora\typora-user-images\1578380550592.png" alt="1578380550592" style="zoom: 50%;" />
+![web模块关系图](.\img\web模块关系图.jpg)
 
 #### 登录界面
 
